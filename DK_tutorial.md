@@ -188,20 +188,5 @@ Nu er du færdig med din kode. Du kan nu afprøve om du kan:
 
 ```template
 input.onButtonPressed(Button.B, function () {
-    slutTid = input.runningTime()
-    måltTid = slutTid - startTid
-    måltTid = måltTid / 1000
-    // Hastighed af lyd i luft er 343 m/s
-    afstand = 343 * måltTid
-    basic.showLeds(`
-    . . # # .
-    . . # . .
-    . . # . .
-    . # # . .
-    . # # . .
-    `)
-    // Vent et sekund for at vise noden
-    basic.pause(1000)
-    basic.showNumber(afstand)
-})
+}
 ```
