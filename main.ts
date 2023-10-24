@@ -22,15 +22,7 @@ input.onButtonPressed(Button.B, function () {
     beregnetTid = beregnetTid / 1000
     // Beregn afstanden
     // 28000 km/t er 7778 m/s
-    afstand = 7778 * beregnetTid
-    basic.showLeds(`
-        . . . . .
-        . # # # .
-        . # . # .
-        . # # # .
-        . . . . .
-        `)
-    // Vent et sekund for at vise målflag
-    basic.pause(1000)
+    afstand = beregnetTid * 7.77
     basic.showNumber(afstand)
+    basic.showString("km")
 })

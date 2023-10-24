@@ -1,30 +1,11 @@
 ## Hvor langt væk er lynet?
 Med denne kode kan du regne ud hvor langt ISS har fløjet
 
-* Slet de to blokke: "når programmet starter" og "for altid"
+## Kodning af knap A
+Når knap A bliver trykket ind, skal @boardname@ starte en tidsmåling. Opret variablen `||variables:startTid||`
 
-## Tryk på knap A
-For at bruge knap A, skal du finde en blok til hvis A knappen bliver trykket ind. 
-* Du kan få et hint ved at trykke på ledetråd knappen.
-
-```blocks
-input.onButtonPressed(Button.A, function () {
-})
-``` 
-
-## Tryk på knap B
-Find blokken til at trykke på knap B.
-
-```blocks
-input.onButtonPressed(Button.B, function () {
-})
-```
-
-## Kodning af knap A (1 af 3) 
-Når knap A bliver trykket ind, skal vi have startet en tidsmåling. Til det skal vi bruge en variabel som vi kalder startTid. Opret først variablen `||variables:startTid||`, i menuen `||variables:Variabler||`
-
-## Kodning af knap A (2 af 3) 
-Nu skal vi finde knappen "sæt "startTid" til " og sætte ind i blokken til knap A. 
+## Kodning af knap A 
+Træk blokken `||variables: sæt startTid til 0||` ind i blokken `||input.knap A||` 
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
@@ -32,8 +13,8 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Kodning af knap A (2 af 3) 
-Og så skal vi sætte blokken `||input.køretid (ms)||` ind i den tomme plads. 
+## Kodning af knap A
+Sæt blokken `||input.køretid (ms)||` ind i `||variables: sæt startTid til 0||`. 
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
@@ -41,141 +22,230 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-## Kodning af knap A (3 af 3)
-Vi vil gerne have skærmen viser et lyn-ikon når man trykker A. 
+## Kodning af knap A
+Træk blokken `||basic.vis LED'er||` ind under under `||variables: sæt||`
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
     startTid = input.runningTime()
     basic.showLeds(`
-    . . # . .
-    . # . . .
-    . . # . .
-    . . . # .
-    . . # . .
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
+    . . . . .
     `)
 })
 ```
 
-## Kodning af knap B (1 af 8) 
-Knap B trykkes ind når tordenbraget høres. Her er der en række variable vi skal bruge. Først oprettes variablen slutTid, der sættes til køretiden. 
+## Kodning af knap A
+Tegn et symbol for at tidsmåling er startet
 
 ```blocks
-input.onButtonPressed(Button.B, function () {
-    // Stop tidsmåling når knap B trykkes
-    slutTid = input.runningTime()
-})
-```
-
-## Kodning af knap B (2 af 8) 
-Med regnestykket slutTid - startTid = måltTid, får du den tid der er gået. Vi kalder den sidste variabel måltTid. Du skal nu oprette variablen måltTid og regnestykket. 
-
-
-```blocks
-input.onButtonPressed(Button.B, function () {
-    slutTid = input.runningTime()
-    måltTid = slutTid - startTid
-})
-```
-
-
-## Kodning af knap B (3 af 8) 
-@boardname@ måler tiden i milisekunder. Vi vil gerne måle i sekunder. Derfor skal vi dividere måltTid med 1000. 
-
-
-
-```blocks
-input.onButtonPressed(Button.B, function () {
-    slutTid = input.runningTime()
-    måltTid = slutTid - startTid
-    måltTid = måltTid / 1000
-})
-```
-
-## Kodning af knap B (4 af 8)
-I næste skridt skal vi regne afstanden ud. Til det skal vi bruge variablen  `||variables:afstand||`. Opret den. 
-
-## Kodning af knap B (5 af 8) 
-Man kan regne afstanden ud, som noget har bevæget sig, hvis man kender hastigheden. Lydens hastighed er ca. 343 meter per sekund. Derfor skal vi gange måltTid med 343 meter per sekund, for at få afstanden til lynet. 
-
-
-```blocks
-input.onButtonPressed(Button.B, function () {
-    slutTid = input.runningTime()
-    måltTid = slutTid - startTid
-    måltTid = måltTid / 1000
-    // Hastighed af lyd i luft er 343 m/s
-    afstand = 343 * måltTid
-})
-```
-
-## Kodning af knap B (6 af 8) 
-På samme måde som da du indsatte lyn-ikonet, skal @boardname@ vise at tordenbraget er registreret. Det viser vi her med et ikon mere. Fx. et node-ikon.
-
-
-```blocks
-input.onButtonPressed(Button.B, function () {
-    slutTid = input.runningTime()
-    måltTid = slutTid - startTid
-    måltTid = måltTid / 1000
-    // Hastighed af lyd i luft er 343 m/s
-    afstand = 343 * måltTid
+input.onButtonPressed(Button.A, function () {
+    startTid = input.runningTime()
     basic.showLeds(`
-    . . # # .
+    . . . . .
     . . # . .
     . . # . .
-    . # # . .
-    . # # . .
+    . . # . .
+    . . . . .
     `)
 })
 ```
 
-## Kodning af knap B (7 af 8) 
-Man skal lige nå at se node-ikonet. Vi lader det derfor stå 1 sekund. Derfor skal du indsætte en pause, der måler i milisekunder. 1 sekund = 1000 ms. 
+## Kodning af knap B
+Find en blok til `||input.knap B||`
 
+```blocks
+input.onButtonPressed(Button.B, function () {
+})
+``` 
+
+## Kodning af knap B 
+Opret variablen `||variables:slutTid||`
+
+## Kodning af knap B 
+Træk blokken `||variables: sæt slutTid til 0||` ind i blokken knap B
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = 0
+})
+```
+
+## Kodning af knap B 
+Træk blokken `||input: køretid (ms)||` ind i blokken `||variables: sæt slutTid til 0||`
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = input.runningTime()
+})
+```
+
+## Kodning af knap B 
+Opret variablen `||variables:beregnetTid||`
+
+## Kodning af knap B 
+Træk `||variables: sæt beregnetTid til 0||` ind under `||variables: sæt slutTid til køretid (ms)||`
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = input.runningTime()
+    beregnetTid = 0
+})
+```
+
+## Kodning af knap B 
+Træk `||math:0 + 0||` ind i blokken `||variables: sæt beregnetTid til 0||`. 
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = input.runningTime()
+    måltTid = 0 + 0
+})
+```
+
+## Kodning af knap B  
+Træk `||variables: slutTid||` ind på det første 0's plads
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = input.runningTime()
+    måltTid = slutTid - 0
+})
+```
+
+## Kodning af knap B  
+Træk `||variables: startTid||` ind på det andet 0's plads
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = input.runningTime()
+    måltTid = slutTid - startTid
+})
+```
+
+## Kodning af knap B 
+@boardname@ måler tiden i milisekunder. Vi skal måle i sekunder. 
+Derfor skal beregnetTid divideres med 1000. Indsæt blokken `||variables: sæt beregnetTid til 0||`.
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = input.runningTime()
+    beregnetTid = slutTid - startTid
+    beregnetTid = 0
+})
+```
+
+## Kodning af knap B 
+Indsæt `||math:0 / 0||` i `||variables: sæt beregnetTid til 0||`
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = input.runningTime()
+    beregnetTid = slutTid - startTid
+    beregnetTid = 0 / 0
+})
+```
+
+## Kodning af knap B 
+Indsæt `||variables: beregnetTid||` på første 0's plads
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = input.runningTime()
+    beregnetTid = slutTid - startTid
+    beregnetTid = beregnetTid / 0
+})
+```
+
+## Kodning af knap B 
+Skriv 1000 på andet 0's plads
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = input.runningTime()
+    beregnetTid = slutTid - startTid
+    beregnetTid = beregnetTid / 1000
+})
+```
+
+## Kodning af knap B 
+Opret variablen `||variables:afstand||`
+
+## Kodning af knap B  
+Indsæt blokken `||variables: sæt afstand til 0||`
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
     slutTid = input.runningTime()
     måltTid = slutTid - startTid
     måltTid = måltTid / 1000
-    // Hastighed af lyd i luft er 343 m/s
-    afstand = 343 * måltTid
-    basic.showLeds(`
-    . . # # .
-    . . # . .
-    . . # . .
-    . # # . .
-    . # # . .
-    `)
-    // Vent et sekund for at vise noden
-    basic.pause(1000)
+    afstand = 0
 })
 ```
 
-## Kodning af knap B (8 af 8) 
-Efter 1 sekund, skal vi vise  `||variables:afstand||` til lynet, som vi jo har regnet ud. Variablen viser hvor langt væk lynet var målt i meter. 
-
+## Kodning af knap B  
+Indsæt blokken `||math:0 * 0||` i `||variables: sæt afstand til 0||`
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
     slutTid = input.runningTime()
-    måltTid = slutTid - startTid
-    måltTid = måltTid / 1000
-    // Hastighed af lyd i luft er 343 m/s
-    afstand = 343 * måltTid
-    basic.showLeds(`
-    . . # # .
-    . . # . .
-    . . # . .
-    . # # . .
-    . # # . .
-    `)
-    // Vent et sekund for at vise noden
-    basic.pause(1000)
+    beregnetTid = slutTid - startTid
+    beregnetTid = måltTid / 1000
+    afstand = 0 * 0
+})
+```
+
+## Kodning af knap B  
+Indsæt blokken `||variables: beregnetTid||` på første 0's plads 
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = input.runningTime()
+    beregnetTid = slutTid - startTid
+    beregnetTid= beregnetTid / 1000
+    afstand = beregnetTid * 0
+})
+```
+
+## Kodning af knap B  
+Skriv 7.77 på andet 0's plads. 7.77 er hastigheden af ISS målt i km / s. Bemærk brug punktum i stedet for komma.  
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = input.runningTime()
+    beregnetTid = slutTid - startTid
+    beregnetTid= beregnetTid / 1000
+    afstand = beregnetTid * 7.77
+})
+```
+
+## Kodning af knap B  
+Indsæt blokken `||basic.vis nummer||`
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = input.runningTime()
+    beregnetTid = slutTid - startTid
+    beregnetTid= beregnetTid / 1000
+    afstand = beregnetTid * 7.77
+})
+```
+
+## Kodning af knap B  
+Indsæt variablen `||variables: afstand ||` i blokken `||basic.vis nummer||`
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    slutTid = input.runningTime()
+    beregnetTid = slutTid - startTid
+    beregnetTid= beregnetTid / 1000
+    afstand = beregnetTid * 7.77
     basic.showNumber(afstand)
-})
+    basic.showString(" km")})
 ```
+
 
 ## Tillykke!
 Nu er du færdig med din kode. Du kan nu afprøve om du kan: 
@@ -187,6 +257,6 @@ Nu er du færdig med din kode. Du kan nu afprøve om du kan:
 * SVÆR: Finde på noget andet at bruge programmet til?
 
 ```template
-input.onButtonPressed(Button.B, function () {
+input.onButtonPressed(Button.A, function () {
 }
 ```
