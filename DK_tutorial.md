@@ -97,12 +97,12 @@ input.onButtonPressed(Button.B, function () {
 ```
 
 ## Kodning af knap B 
-Træk `||math:0 + 0||` ind i blokken `||variables: sæt beregnetTid til 0||`. 
+Træk `||math:0 - 0||` ind i blokken `||variables: sæt beregnetTid til 0||`. 
 
 ```blocks
 input.onButtonPressed(Button.B, function () {
     slutTid = input.runningTime()
-    måltTid = 0 + 0
+    måltTid = 0 - 0
 })
 ```
 
@@ -248,13 +248,7 @@ input.onButtonPressed(Button.B, function () {
 
 
 ## Tillykke!
-Nu er du færdig med din kode. Du kan nu afprøve om du kan: 
-* Let: Kan du ændre pausens længde?
-* Let: Kan du ændre så du skriver afstanden i kilometer i stedet for meter? 
-* Mellem: Kan du gøre koden kortere? 
-* Mellem: Kan du udvide koden, så den animerer at lynet slår ned?
-* SVÆR: Bruge 3 eller flere @boardname@ med programmet til at bestemme positionen til en ven der klapper langt væk?
-* SVÆR: Finde på noget andet at bruge programmet til?
+Nu er du færdig med din kode. Tryk på færdig!
 
 ```template
 input.onButtonPressed(Button.A, function () {
