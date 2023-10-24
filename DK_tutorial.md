@@ -1,7 +1,6 @@
 ## Hvor langt væk er lynet?
-Nu skal vi kode en @boardname@. 
+Med denne kode kan du regne ud hvor langt ISS har fløjet
 
-## 
 * Slet de to blokke: "når programmet starter" og "for altid"
 
 ## Tryk på knap A
@@ -187,3 +186,23 @@ Nu er du færdig med din kode. Du kan nu afprøve om du kan:
 * SVÆR: Bruge 3 eller flere @boardname@ med programmet til at bestemme positionen til en ven der klapper langt væk?
 * SVÆR: Finde på noget andet at bruge programmet til?
 
+```template
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.changeScoreBy(1)
+    audience.setImage(assets.image`clap2`)
+})
+info.onCountdownEnd(function () {
+    game.over(true, effects.hearts)
+})
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
+    audience.setImage(assets.image`clap1`)
+})
+let audience: Sprite = null
+scene.setBackgroundImage(assets.image`stage`)
+let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
+talent.bottom = 115
+audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
+audience.bottom = 120
+game.splash("Press (A) to play!")
+info.startCountdown(10)
+```
