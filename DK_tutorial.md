@@ -187,22 +187,6 @@ Nu er du færdig med din kode. Du kan nu afprøve om du kan:
 * SVÆR: Finde på noget andet at bruge programmet til?
 
 ```template
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.changeScoreBy(1)
-    audience.setImage(assets.image`clap2`)
+input.onButtonPressed(Button.A, function () {
 })
-info.onCountdownEnd(function () {
-    game.over(true, effects.hearts)
-})
-controller.A.onEvent(ControllerButtonEvent.Released, function () {
-    audience.setImage(assets.image`clap1`)
-})
-let audience: Sprite = null
-scene.setBackgroundImage(assets.image`stage`)
-let talent = sprites.create(assets.image`towering turtles`, SpriteKind.Player)
-talent.bottom = 115
-audience = sprites.create(assets.image`clap1`, SpriteKind.Player)
-audience.bottom = 120
-game.splash("Press (A) to play!")
-info.startCountdown(10)
 ```
