@@ -1,5 +1,9 @@
-## Hvor langt væk er lynet?
+## Hvor langt fløj ISS? @unplugged
 Med denne kode kan du regne ud hvor langt ISS har fløjet
+![](https://github.com/ESERODanmark/isstravellingdistance/blob/master/ikon_issDist.png?raw=true)
+
+## Multi-tælleren @unplugged
+![](https://github.com/ESERODanmark/multicounter/blob/master/clickTip.gif?raw=true)
 
 ## Kodning af knap A
 Når knap A bliver trykket ind, skal @boardname@ starte en tidsmåling. Opret variablen `||variables:startTid||`
