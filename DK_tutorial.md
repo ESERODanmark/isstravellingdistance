@@ -1,7 +1,8 @@
 ## Hvor langt fløj ISS? @unplugged
-<a href="https://www.youtube.com/watch?v=S7SLep244ss">
-  <img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DS7SLep244ss" alt="Testvideo" title="Testvideo"/>
-</a>
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://github.com/ESERODanmark/isstravellingdistance/blob/master/ikon_issDist.png?raw=true" alt="DampVibrations" width="300"/>
+  <img src="https://github.com/ESERODanmark/multicounter/blob/master/clickTip.gif?raw=true" alt="ClickTip" width="300"/>
+</div>
 
 
 ## Kodning af knap A
