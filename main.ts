@@ -13,6 +13,7 @@ input.onButtonPressed(Button.A, function () {
         . . . . .
         `)
 })
+
 input.onButtonPressed(Button.B, function () {
     // Stop tidsmåling når knap B trykkes
     slutTid = input.runningTime()
