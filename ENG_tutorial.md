@@ -1,4 +1,4 @@
-## Hvor langt fløj ISS?
+## Hvor langt væk er lynet?
 Med denne kode kan du regne ud hvor langt ISS har fløjet
 
 ## Kodning af knap A
