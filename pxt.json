@@ -11,13 +11,14 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "DK_tutorial.md"
+        "DK_tutorial.md",
+        "ENG_tutorial.md"
     ],
     "testFiles": [
         "test.ts"
     ],
     "targetVersions": {
-        "target": "6.0.22",
+        "target": "6.0.25",
         "targetId": "microbit"
     },
     "supportedTargets": [
