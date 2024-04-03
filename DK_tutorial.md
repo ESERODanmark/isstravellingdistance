@@ -1,7 +1,7 @@
 ## Afstandsberegner @unplugged
 <div style="display: flex; justify-content: space-around;">
-  <img src="https://github.com/ESERODanmark/isstravellingdistance/blob/master/ikon_issDist.png?raw=true" alt="DampVibrations" width="300"/>
-  <img src="https://github.com/ESERODanmark/multicounter/blob/master/clickTip.gif?raw=true" alt="ClickTip" width="300"/>
+    <img src="https://github.com/ESERODanmark/TemperaturDatalogger/blob/master/IkonESERO.png?raw=true" alt="DampVibrations" width="301"/>
+    <img src="https://github.com/ESERODanmark/multicounter/blob/master/clickTip.gif?raw=true" alt="ClickTip" width="300"/>
 </div>
 
 
